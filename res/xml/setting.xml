@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+ <PreferenceCategory android:title="服务器设置">
+    <EditTextPreference
+   android:key="Username"
+   android:title="用户名"    
+   android:summary="用于连接服务器的用户名"
+   android:defaultValue="WH"/>
+   <EditTextPreference
+   android:key="serverUrl"
+   android:title="视频服务器地址"    
+   android:summary="保存服务器地址"
+   android:defaultValue="162.105.76.233"/>
+<EditTextPreference
+   android:key="commandPort"
+   android:title="服务器命令端口"    
+   android:summary="连接服务器的端口地址"
+   android:defaultValue="2012"/>
+   </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <ScrollView
+    	android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        
+         <LinearLayout 
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical">
+            	<TextView
+      				android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:layout_marginTop="20dp"
+        			android:layout_marginLeft="20dp"
+        			android:text="名称：" />
+
+    			<EditText
+        			android:id="@+id/devicename"
+        			android:layout_width="match_parent"
+        			android:layout_height="wrap_content"
+        			android:ems="10"
+        			android:layout_marginLeft="20dp"
+        			android:layout_marginRight="20dp">
+    			</EditText>
+    
+    			<TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:layout_marginTop="20dp"
+        			android:layout_marginLeft="20dp"
+        			android:text="类型：" />
+    			<RadioGroup 
+            		android:contentDescription="选择导联"
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		android:orientation="horizontal"
+            		android:layout_marginLeft="20dp"
+            		android:checkedButton="@+id/radio_lead1">
+            		<RadioButton 
+            			android:layout_width="wrap_content"
+            		    android:layout_height="wrap_content"
+            		    android:id="@+id/ecg_device"
+            		    android:text="心电设备"
+            		    android:textSize="20dp"
+            		    android:checked="true"/>
+            		<RadioButton 
+            		    android:layout_width="wrap_content"
+            		    android:layout_height="wrap_content"
+            		    android:id="@+id/otherdevice"
+            		    android:layout_marginLeft="20dp"
+            		    android:text="其他设备"
+            		    android:textSize="20dp"
+            		    android:checked="true"/>
+            	</RadioGroup>
+            	<TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:layout_marginTop="20dp"
+        			android:layout_marginLeft="20dp"
+        			android:text="时间：" />
+
+            	<DatePicker
+            	    android:id="@+id/datePicker1"
+            	    android:layout_width="wrap_content"
+            	    android:layout_height="wrap_content" 
+            	    android:layout_marginLeft="50dp"/>
+
+            	<TimePicker
+            	    android:id="@+id/timePicker1"
+            	    android:layout_width="wrap_content"
+            	    android:layout_height="wrap_content"
+            	    android:layout_marginLeft="50dp" />
+    			
+         </LinearLayout>
+        
+    </ScrollView>
+
+</LinearLayout>

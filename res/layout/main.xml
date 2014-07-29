@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+        <com.guo.ecg.client.BackgroundView
+        	android:layout_width="fill_parent"
+        	android:layout_height="fill_parent">
+        </com.guo.ecg.client.BackgroundView>
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            >
+            
+             <LinearLayout 
+            	android:layout_width="wrap_content"
+            	android:layout_height="fill_parent"
+            	android:orientation="vertical"
+            	android:layout_weight="18">
+            
+            	<RelativeLayout 
+                	android:layout_width="fill_parent"
+                	android:layout_height="match_parent"
+                	android:layout_weight="1">
+                	
+                	<ScrollView 
+                	    android:layout_width="wrap_content"
+        				android:layout_height="wrap_content"
+        				android:id="@+id/ecg_viewer">
+                	    <LinearLayout 
+                	        android:layout_width="wrap_content"
+                	        android:layout_height="wrap_content"
+                	        android:orientation="vertical">
+                	        <SurfaceView
+                	    		android:id="@+id/ecg_show"
+                	    		android:layout_width="450dp"
+                	    		android:layout_height="500dp"
+                	    		android:background="#00000000">
+                			</SurfaceView>           			
+                	    </LinearLayout>
+                	</ScrollView>
+                	<TextView 
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:id="@+id/status"
+                	    android:layout_alignParentLeft="true"
+                	    android:layout_alignParentTop="true"
+                	    android:layout_marginLeft="80dp"
+                	    android:layout_marginTop="10dp"
+                	    android:text="未连接"
+                	    android:textColor="#00FF00">
+                	    
+                	</TextView>
+            		<kankan.wheel.widget.WheelView
+						android:id="@+id/passw_1"
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:layout_toRightOf="@+id/ecg_viewer"
+						android:layout_alignParentBottom="true">
+            		</kankan.wheel.widget.WheelView>
+                </RelativeLayout>
+            	<RelativeLayout 
+                	android:layout_width="fill_parent"
+                	android:layout_height="match_parent"
+                	android:layout_weight="1">
+                	
+                	<SurfaceView
+                	    android:id="@+id/xl_show"
+                	    android:layout_width="450dp"
+                	    android:layout_height="fill_parent"
+                	    android:background="#00000000">
+                	</SurfaceView>
+                	
+                	<TextView 
+                	    android:id="@+id/xl_text"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentTop="true"
+                	    android:layout_marginTop="10dp"
+                	    android:layout_toRightOf="@+id/xl_show"
+        				android:layout_marginLeft="8dp"
+                	    android:text="0"
+                	    android:textSize="30dp"
+                	    android:textColor="#FF8F00"/>
+                	
+                	<TextView 
+                	    android:id="@+id/xl_unit"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_below="@+id/xl_text"
+                	    android:layout_toRightOf="@+id/xl_show"
+        				android:layout_marginLeft="12dp"
+                	    android:text="次/分"
+                	    android:textSize="20dp"
+                	    android:textColor="#FF8F00"/>
+                	<TextView 
+                	    android:id="@+id/inputover"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_alignParentLeft="true"
+                	    android:layout_marginLeft="55dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:text="输入过载"/>
+                	<ImageView 
+                	    android:id="@+id/inputoverpic"
+                	    android:layout_width="55dp"
+                	    android:layout_height="55dp"
+                	    android:layout_above="@+id/inputover"
+                	    android:layout_alignParentLeft="true"
+                	    android:layout_marginLeft="57dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:src="@drawable/greencycle"/>
+                	<TextView 
+                	    android:id="@+id/heartratehigh"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_toRightOf="@+id/inputover"
+        				android:layout_marginLeft="1dp"
+        				android:layout_marginBottom="2dp"
+                	    android:text="心率过高"/>
+                	<ImageView 
+                	    android:id="@+id/heartratehighpic"
+                	    android:layout_width="55dp"
+                	    android:layout_height="55dp"
+                	    android:layout_above="@+id/inputover"
+                	    android:layout_toRightOf="@+id/inputoverpic"
+                	    android:layout_marginLeft="1dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:src="@drawable/greencycle"/>
+                	<TextView 
+                	    android:id="@+id/st_alarm"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_toRightOf="@+id/heartratehigh"
+        				android:layout_marginLeft="1dp"
+        				android:layout_marginBottom="2dp"
+                	    android:text="ST波异常"/>
+                	<ImageView 
+                	    android:id="@+id/st_alarmpic"
+                	    android:layout_width="55dp"
+                	    android:layout_height="55dp"
+                	    android:layout_above="@+id/inputover"
+                	    android:layout_toRightOf="@+id/heartratehighpic"
+                	    android:layout_marginLeft="1dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:src="@drawable/greencycle"/>
+                	
+                	<TextView 
+                	    android:id="@+id/t_alarm"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_toRightOf="@+id/st_alarm"
+        				android:layout_marginLeft="1dp"
+        				android:layout_marginBottom="2dp"
+                	    android:text="T波异常"/>
+                	<ImageView 
+                	    android:id="@+id/t_alarmpic"
+                	    android:layout_width="55dp"
+                	    android:layout_height="55dp"
+                	    android:layout_above="@+id/inputover"
+                	    android:layout_toRightOf="@+id/st_alarmpic"
+                	    android:layout_marginLeft="1dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:src="@drawable/greencycle"/>
+                	<TextView 
+                	    android:id="@+id/heartratelow"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_toRightOf="@+id/t_alarm"
+        				android:layout_marginLeft="1dp"
+        				android:layout_marginBottom="2dp"
+                	    android:text="心率过低"/>
+                	<ImageView 
+                	    android:id="@+id/heartratelowpic"
+                	    android:layout_width="55dp"
+                	    android:layout_height="55dp"
+                	    android:layout_above="@+id/inputover"
+                	    android:layout_toRightOf="@+id/t_alarmpic"
+                	    android:layout_marginLeft="1dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:src="@drawable/greencycle"/>
+                	<TextView 
+                	    android:id="@+id/leaddrop"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_toRightOf="@+id/heartratelow"
+        				android:layout_marginLeft="1dp"
+        				android:layout_marginBottom="2dp"
+                	    android:text="导联脱落"/>
+                	<ImageView 
+                	    android:id="@+id/leaddroppic"
+                	    android:layout_width="55dp"
+                	    android:layout_height="55dp"
+                	    android:layout_above="@+id/inputover"
+                	    android:layout_toRightOf="@+id/heartratelowpic"
+                	    android:layout_marginLeft="1dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:src="@drawable/greencycle"/>
+                	<TextView 
+                	    android:id="@+id/otheralarm1"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_toRightOf="@+id/leaddrop"
+        				android:layout_marginLeft="1dp"
+        				android:layout_marginBottom="2dp"
+                	    android:text="手动报警"/>
+                	<ImageView 
+                	    android:id="@+id/otheralarmpic1"
+                	    android:layout_width="55dp"
+                	    android:layout_height="55dp"
+                	    android:layout_above="@+id/inputover"
+                	    android:layout_toRightOf="@+id/leaddroppic"
+                	    android:layout_marginLeft="1dp"
+                	    android:layout_marginBottom="2dp"
+                	    android:src="@drawable/greencycle"/>
+                	<TextView 
+                	    android:id="@+id/otheralarm2"
+                	    android:layout_width="wrap_content"
+                	    android:layout_height="wrap_content"
+                	    android:layout_alignParentBottom="true"
+                	    android:layout_toRightOf="@+id/otheralarm1"
+        				android:layout_marginLeft="1dp"
+        				android:layout_marginBottom="2dp"
+                	    android:text="其他报警"/>
+                	
+            	</RelativeLayout>
+        	</LinearLayout>
+        	        	
+      		<RelativeLayout
+      		    android:layout_width="wrap_content"
+      		    android:layout_height="match_parent"
+      		    android:layout_weight="3.0"
+      		     >
+
+      			<ImageView
+      			    android:id="@+id/imageView1"
+      			    android:layout_width="wrap_content"
+      			    android:layout_height="wrap_content"
+      			    android:layout_alignParentTop="true"
+      			    android:layout_alignParentLeft="true"
+      			    android:layout_marginTop="24dp"
+      			    android:src="@drawable/server_logo" />
+      		
+
+      			<ImageView
+      			    android:id="@+id/imageView2"
+      			    android:layout_width="wrap_content"
+      			    android:layout_height="wrap_content"
+      			    android:layout_alignLeft="@+id/imageView1"
+      			    android:layout_below="@+id/imageView1"
+      			    android:layout_marginTop="25dp"
+      			    android:src="@drawable/send" />
+      			
+      			<ImageView
+      			    android:id="@+id/imageView3"
+      			    android:layout_width="wrap_content"
+      			    android:layout_height="wrap_content"
+      			    android:layout_alignLeft="@+id/imageView2"
+      			    android:layout_below="@+id/imageView2"
+      			    android:layout_marginTop="25dp"
+      			    android:src="@drawable/bluedis" />
+      			
+      			<ImageView
+      			    android:id="@+id/imageView4"
+      			    android:layout_width="wrap_content"
+      			    android:layout_height="wrap_content"
+      			    android:layout_alignParentLeft="true"
+      			    android:layout_alignParentBottom="true"
+      			    android:layout_marginBottom="25dp"
+      			    android:src="@drawable/play" />
+      			
+      			<ImageView
+      			    android:id="@+id/imageView5"
+      			    android:layout_width="wrap_content"
+      			    android:layout_height="wrap_content"
+      			    android:layout_alignLeft="@+id/imageView4"
+      			    android:layout_above="@+id/imageView4"
+      			    android:layout_marginBottom="25dp"
+      			    android:src="@drawable/doc" />
+
+      		</RelativeLayout>
+        	            
+        </LinearLayout>
+           
+</FrameLayout>
